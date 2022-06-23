@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('layout.master');
 });
+
+Route::resource('artikel', 'ArtikelController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
