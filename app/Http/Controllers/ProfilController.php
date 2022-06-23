@@ -12,8 +12,25 @@ class ProfilController extends Controller
     {
         $idUser = Auth::id();
 
-        $profile = Profil::where('users_id', $idUser);
+        $profil = Profil::where('users_id', $idUser)->first();
 
-        return view('profil.index', ['profile' => $profile]);
+        return view('profil.index', ['profil' => $profil]);
+    }
+
+    public function update($id, Request $request)
+    {
+        $request->validate([
+            'biodata' => 'required',
+            'umur' => 'required|numeric',
+            'alamat' => 'required',
+        ]);
+
+        Profil::where('id', $id)->update([
+            'biodata' => $request->biodata,
+            'umur' => $request->umur,
+            'alamat' => $request->alamat,
+        ]);
+
+        return redirect("/profil")->with('success', 'Profil berhasil diubah');
     }
 }

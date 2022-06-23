@@ -28,7 +28,11 @@ Route::resource('artikel', 'ArtikelController');
 
 
 // Route Profil
-// Route::resource('profil', 'ProfilController');
+Route::resource('profil', 'ProfilController');
+// Route dengan cara manual
+// Route::get('/profil', 'ProfilController@index');
+// Route::put('/profil/{id}', 'ProfilController@update');
+
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
