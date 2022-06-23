@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Artikel;
 use App\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 
 class ArtikelController extends Controller
 {
@@ -15,7 +17,8 @@ class ArtikelController extends Controller
      */
     public function index()
     {
-        //
+        $artikel = Artikel::all();
+        return view('artikel.index', ['artikel' => $artikel]);
     }
 
     /**
@@ -43,8 +46,7 @@ class ArtikelController extends Controller
             'isi' => 'required',
         ]);
 
-        $user = User::all();
-        // dd($user);
+        $idUser = Auth::id();
 
         $namaGambar = time() . '.' . $request->gambar->extension();
         $request->gambar->move(public_path('gambar'), $namaGambar);
@@ -53,7 +55,7 @@ class ArtikelController extends Controller
             'judul' => $request->judul,
             'gambar' => $namaGambar,
             'isi' => $request->isi,
-            'users_id' => $user->id,
+            'users_id' => $idUser,
         ]);
 
         return redirect("/artikel")->with('success', 'Data berhasil ditambahkan');
@@ -67,7 +69,8 @@ class ArtikelController extends Controller
      */
     public function show($id)
     {
-        //
+        $artikel = Artikel::find($id);
+        return view('artikel.show', ['artikel' => $artikel]);
     }
 
     /**
@@ -78,7 +81,8 @@ class ArtikelController extends Controller
      */
     public function edit($id)
     {
-        //
+        $artikel = Artikel::find($id);
+        return view('artikel.edit', ['artikel' => $artikel]);
     }
 
     /**
@@ -90,7 +94,36 @@ class ArtikelController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'judul' => 'required',
+            'gambar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:10048',
+            'isi' => 'required',
+        ]);
+
+        $idUser = Auth::id();
+        $artikel = Artikel::find($id);
+
+        if ($request->has('gambar')) {
+            $path = "gambar/";
+            File::delete($path . $artikel->gambar);
+            $namaGambar = time() . '.' . $request->gambar->extension();
+            $request->gambar->move(public_path('gambar'), $namaGambar);
+
+            Artikel::where('id', $id)->update([
+                'judul' => $request->judul,
+                'gambar' => $namaGambar,
+                'isi' => $request->isi,
+                'users_id' => $idUser,
+            ]);
+        } else {
+            Artikel::where('id', $id)->update([
+                'judul' => $request->judul,
+                'isi' => $request->isi,
+                'users_id' => $idUser,
+            ]);
+        }
+
+        return redirect("/artikel")->with('success', 'Data berhasil diubah');
     }
 
     /**
@@ -101,6 +134,10 @@ class ArtikelController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $artikel = Artikel::find($id);
+        $path = "gambar/";
+        File::delete($path . $artikel->gambar);
+        Artikel::destroy($id);
+        return redirect("/artikel")->with('success', 'Data berhasil dihapus');
     }
 }
