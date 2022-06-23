@@ -43,16 +43,18 @@ class ArtikelController extends Controller
             'isi' => 'required',
         ]);
 
-        $namaGambar = time() . '.' . $request->gambar->extension();
+        $user = User::all();
+        // dd($user);
 
+        $namaGambar = time() . '.' . $request->gambar->extension();
         $request->gambar->move(public_path('gambar'), $namaGambar);
 
-        $artikel = new Artikel;
-        $artikel->judul = $request->judul;
-        $artikel->gambar = $namaGambar;
-        $artikel->isi = $request->isi;
-
-        $artikel->save();
+        Artikel::create([
+            'judul' => $request->judul,
+            'gambar' => $namaGambar,
+            'isi' => $request->isi,
+            'users_id' => $user->id,
+        ]);
 
         return redirect("/artikel")->with('success', 'Data berhasil ditambahkan');
     }
