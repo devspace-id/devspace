@@ -9,6 +9,7 @@
                 <div class="card-body">
                     <h2>{{ $artikel->judul }}</h2>
                     <em>Ditulis Oleh: {{ $artikel->user->name }}</em>
+                    <hr>
                     <p class="card-text">{{ $artikel->isi }}</p>
                 </div>
             </div>

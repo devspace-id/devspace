@@ -44,6 +44,16 @@ Route::resource('kategori', 'KategoriController');
 // Route::put('/kategori/{id}', 'KategoriController@update');
 // Route::delete('/kategori/{id}', 'KategoriController@destroy');
 
+// Route Pertanyaan
+Route::resource('pertanyaan', 'PertanyaanController');
+// Route dengan cara manual
+// Route::get('/pertanyaan', 'PertanyaanController@index');
+// Route::get('/pertanyaan/create', 'PertanyaanController@create');
+// Route::post('/pertanyaan', 'PertanyaanController@store');
+// Route::get('/pertanyaan/{id}', 'PertanyaanController@show');
+// Route::get('/pertanyaan/{id}/edit', 'PertanyaanController@edit');
+// Route::put('/pertanyaan/{id}', 'PertanyaanController@update');
+// Route::delete('/pertanyaan/{id}', 'PertanyaanController@destroy');
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

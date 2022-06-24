@@ -8,4 +8,9 @@ class Kategori extends Model
 {
     protected $table = 'kategori';
     protected $fillable = ['nama_kategori'];
+
+    public function pertanyaan()
+    {
+        return $this->hasMany('App\Pertanyaan', 'kategori_id');
+    }
 }
