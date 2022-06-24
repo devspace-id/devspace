@@ -33,6 +33,17 @@ Route::resource('profil', 'ProfilController');
 // Route::get('/profil', 'ProfilController@index');
 // Route::put('/profil/{id}', 'ProfilController@update');
 
+// Route Kategori
+Route::resource('kategori', 'KategoriController');
+// Route dengan cara manual
+// Route::get('/kategori', 'KategoriController@index');
+// Route::get('/kategori/create', 'KategoriController@create');
+// Route::post('/kategori', 'KategoriController@store');
+// Route::get('/kategori/{id}', 'KategoriController@show');
+// Route::get('/kategori/{id}/edit', 'KategoriController@edit');
+// Route::put('/kategori/{id}', 'KategoriController@update');
+// Route::delete('/kategori/{id}', 'KategoriController@destroy');
+
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
