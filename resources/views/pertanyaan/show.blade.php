@@ -1,13 +1,18 @@
 @extends('layout.master')
 
 @section('content')
-    <a href="/pertanyaan" class="btn btn-primary">Kembali</a>
-    <a href="/pertanyaan/{{ $pertanyaan->id }}/edit" class="btn btn-primary">Edit</a>
-    <form action="/pertanyaan/{{ $pertanyaan->id }}" method="POST">
-        @csrf
-        @method('DELETE')
-        <input type="submit" value="delete" class="btn btn-danger btn-sm m-1">
-    </form>
+    @auth
+        <a href="/pertanyaan" class="btn btn-primary">Kembali</a>
+        <a href="/pertanyaan/{{ $pertanyaan->id }}/edit" class="btn btn-primary">Edit</a>
+        <form action="/pertanyaan/{{ $pertanyaan->id }}" method="POST">
+            @csrf
+            @method('DELETE')
+            <input type="submit" value="delete" class="btn btn-danger btn-sm m-1">
+        </form>
+    @endauth
+    @guest
+        <a href="/pertanyaan" class="btn btn-primary">Kembali</a>
+    @endguest
     <div class="row">
 
         <div class="col-12">

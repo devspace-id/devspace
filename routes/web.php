@@ -26,27 +26,28 @@ Route::resource('artikel', 'ArtikelController');
 // Route::put('/artikel/{id}', 'ArtikelController@update');
 // Route::delete('/artikel/{id}', 'ArtikelController@destroy');
 
+Route::group(['middleware' => ['auth']], function () {
+    // Route Profil
+    Route::resource('profil', 'ProfilController')->only([
+        'index', 'update'
+    ]);
+    // Route dengan cara manual
+    // Route::get('/profil', 'ProfilController@index');
+    // Route::put('/profil/{id}', 'ProfilController@update');
+});
 
-// Route Profil
-Route::resource('profil', 'ProfilController')->only([
-    'index', 'update'
-]);
-// Route dengan cara manual
-// Route::get('/profil', 'ProfilController@index');
-// Route::put('/profil/{id}', 'ProfilController@update');
-
-
-// Route Kategori
-Route::resource('kategori', 'KategoriController');
-// Route dengan cara manual
-// Route::get('/kategori', 'KategoriController@index');
-// Route::get('/kategori/create', 'KategoriController@create');
-// Route::post('/kategori', 'KategoriController@store');
-// Route::get('/kategori/{id}', 'KategoriController@show');
-// Route::get('/kategori/{id}/edit', 'KategoriController@edit');
-// Route::put('/kategori/{id}', 'KategoriController@update');
-// Route::delete('/kategori/{id}', 'KategoriController@destroy');
-
+Route::group(['middleware' => ['auth']], function () {
+    // Route Kategori
+    Route::resource('kategori', 'KategoriController');
+    // Route dengan cara manual
+    // Route::get('/kategori', 'KategoriController@index');
+    // Route::get('/kategori/create', 'KategoriController@create');
+    // Route::post('/kategori', 'KategoriController@store');
+    // Route::get('/kategori/{id}', 'KategoriController@show');
+    // Route::get('/kategori/{id}/edit', 'KategoriController@edit');
+    // Route::put('/kategori/{id}', 'KategoriController@update');
+    // Route::delete('/kategori/{id}', 'KategoriController@destroy');
+});
 
 // Route Pertanyaan
 Route::resource('pertanyaan', 'PertanyaanController');
@@ -60,10 +61,9 @@ Route::resource('pertanyaan', 'PertanyaanController');
 // Route::delete('/pertanyaan/{id}', 'PertanyaanController@destroy');
 
 
-// Route Jawaban
 Route::resource('jawaban', 'JawabanController')->only([
     'store'
-]);
+])->middleware('auth');
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

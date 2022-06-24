@@ -6,7 +6,24 @@
             <div class="card">
                 <div class="card-body">
                     <h2>{{ $kategori->nama_kategori }}</h2>
-                    <p>Nanti akan diisi dengan artikel yang memiliki kategori ini</p>
+                    <hr>
+                    @forelse ($kategori->pertanyaan as $item)
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="card">
+                                    <img class="card-img-top" src="{{ asset('/gambar/' . $item->gambar) }}" height="400px"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <h2>{{ $item->judul }}</h2>
+                                        <p class="card-text">{{ Str::limit($item->isi, 100) }}</p>
+                                        <a href="/pertanyaan/{{ $item->id }}" class="btn btn-primary">Lihat</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @empty
+                        <h4>Tidak ada Pertanyaan</h4>
+                    @endforelse
                 </div>
             </div>
         </div>
