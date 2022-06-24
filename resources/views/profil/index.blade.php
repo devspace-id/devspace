@@ -3,16 +3,21 @@
 @section('content')
     <div class="card card-primary ml-3 mt-3">
         <div class="card-header">
-            <h3 class="card-title">Update Profil</h3>
+            <h3 class="card-title">Halaman Profil</h3>
         </div>
 
         <form action="/profil/{{ $profil->id }}" method="POST">
             @csrf
             @method('PUT')
             <div class="card-body">
+                <label>NAMA</label>
+                <input type="text" class="form-control" value="{{ $profil->user->name }}" disabled>
+                <label>Email</label>
+                <input type="text" class="form-control" value="{{ $profil->user->email }}" disabled>
                 <div class="form-group">
                     <label for="biodata">biodata</label>
-                    <input type="text" name="biodata" class="form-control" id="biodata" value="{{ $profil->biodata }}">
+                    <input type="text" name="biodata" class="form-control" id="biodata"
+                        value="{{ $profil->biodata }}">
                     @error('biodata')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror

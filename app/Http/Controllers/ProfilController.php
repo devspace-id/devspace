@@ -31,6 +31,6 @@ class ProfilController extends Controller
             'alamat' => $request->alamat,
         ]);
 
-        return redirect("/profil")->with('success', 'Profil berhasil diubah');
+        return redirect("/")->with('success', 'Profil berhasil diubah');
     }
 }
