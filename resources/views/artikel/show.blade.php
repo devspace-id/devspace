@@ -8,6 +8,7 @@
                     alt="Card image cap">
                 <div class="card-body">
                     <h2>{{ $artikel->judul }}</h2>
+                    <em>Ditulis Oleh: {{ $artikel->user->name }}</em>
                     <p class="card-text">{{ $artikel->isi }}</p>
                 </div>
             </div>
