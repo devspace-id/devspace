@@ -37,7 +37,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    // Relasi dengan model Profil
+    // Relasi dengan model
     public function profil()
     {
         return $this->hasOne('App\Profil', 'users_id');
@@ -50,6 +50,11 @@ class User extends Authenticatable
 
     public function pertanyaan()
     {
-        return $this->hasMany('App\Artikel', 'users_id');
+        return $this->hasMany('App\Pertanyaan', 'users_id');
+    }
+
+    public function jawaban()
+    {
+        return $this->hasMany('App\Jawaban', 'users_id');
     }
 }

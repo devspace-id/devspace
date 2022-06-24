@@ -28,10 +28,13 @@ Route::resource('artikel', 'ArtikelController');
 
 
 // Route Profil
-Route::resource('profil', 'ProfilController');
+Route::resource('profil', 'ProfilController')->only([
+    'index', 'update'
+]);
 // Route dengan cara manual
 // Route::get('/profil', 'ProfilController@index');
 // Route::put('/profil/{id}', 'ProfilController@update');
+
 
 // Route Kategori
 Route::resource('kategori', 'KategoriController');
@@ -44,6 +47,7 @@ Route::resource('kategori', 'KategoriController');
 // Route::put('/kategori/{id}', 'KategoriController@update');
 // Route::delete('/kategori/{id}', 'KategoriController@destroy');
 
+
 // Route Pertanyaan
 Route::resource('pertanyaan', 'PertanyaanController');
 // Route dengan cara manual
@@ -54,6 +58,12 @@ Route::resource('pertanyaan', 'PertanyaanController');
 // Route::get('/pertanyaan/{id}/edit', 'PertanyaanController@edit');
 // Route::put('/pertanyaan/{id}', 'PertanyaanController@update');
 // Route::delete('/pertanyaan/{id}', 'PertanyaanController@destroy');
+
+
+// Route Jawaban
+Route::resource('jawaban', 'JawabanController')->only([
+    'store'
+]);
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

@@ -18,4 +18,9 @@ class Pertanyaan extends Model
     {
         return $this->belongsTo('App\Kategori', 'kategori_id');
     }
+
+    public function jawaban()
+    {
+        return $this->hasMany('App\Jawaban', 'pertanyaan_id');
+    }
 }
