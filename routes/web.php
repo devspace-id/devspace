@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('layout.master');
+    return view('layouts.home');
 });
 
 // Route Artikel
