@@ -61,7 +61,7 @@
                     <a class="btn-outline-sm" href="/login">LOG IN</a>
                 </span>
                 <span class="nav-item">
-                    <a class="btn-outline-sm" href="/regiter">REGISTER</a>
+                    <a class="btn-outline-sm" href="/register">REGISTER</a>
                 </span>
             </div>
         </div> <!-- end of container -->

@@ -72,11 +72,11 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="biodata" class="col-md-4 col-form-label text-md-right">Biodata</label>
+                                <label for="username" class="col-md-4 col-form-label text-md-right">Username</label>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control @error('biodata') is-invalid @enderror"
-                                        name="biodata" value="{{ old('biodata') }}">
-                                    @error('biodata')
+                                    <input type="text" class="form-control @error('username') is-invalid @enderror"
+                                        name="username" value="{{ old('username') }}">
+                                    @error('Username')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>

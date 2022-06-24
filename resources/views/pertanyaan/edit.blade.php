@@ -24,7 +24,7 @@
                     <input type="text" name="isi" class="form-control" id="isi"
                         value="{{ old('isi', $pertanyaan->isi) }}">
                     @error('isi')
-                        <div class="alert alert-danger">{{ $message }}</div>
+                        <div class="alert alert-danger">{{ $message }}</divbaz>
                     @enderror
                 </div>
 
