@@ -30,7 +30,7 @@
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <div class="container-fluid">
-                    <div class="row mb-2">
+                    <div class="row">
                         <div class="col-sm-6">
                             <h1>@yield('judul')</h1>
                         </div>
@@ -46,7 +46,7 @@
 
                 <!-- Default box -->
                 <div class="card">
-                    <div class="card-header">
+                    {{-- <div class="card-header">
                         <h3 class="card-title">@yield('judul')</h3>
 
                         <div class="card-tools">
@@ -57,8 +57,10 @@
                                 <i class="fas fa-times"></i>
                             </button>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="card-body">
+                        {{-- Halaman selatang datang dashboar route /home --}}
+                        <h2 class="text-center">Dashboard</h2>
                         @yield('content')
                     </div>
                     <!-- /.card-body -->

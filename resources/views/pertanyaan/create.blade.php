@@ -3,7 +3,7 @@
 @section('content')
     <div class="card card-primary ml-3 mt-3">
         <div class="card-header">
-            <h3 class="card-title">Input Pertanyaan</h3>
+            <h3 class="card-title">Buat Pertanyaan</h3>
         </div>
 
         <form action="/pertanyaan" method="POST" enctype="multipart/form-data">
@@ -36,7 +36,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="kategori_id">kategori_id</label>
+                    <label for="kategori_id">Pilih Kategori</label>
                     <select name="kategori_id" class="form-control">
                         <option value="">-Pilih Kategori-</option>
                         @forelse ($kategori as $item)
@@ -45,7 +45,7 @@
                             <option value="">Tidak ada kategori</option>
                         @endforelse
                     </select>
-                    <a class="btn-primary mt-3" href="/kategori/create">Buat Kategori</a>
+                    <a class="btn-primary p-1 rounded" href="/kategori/create">Buat Kategori</a>
                     @error('kategori_id')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
@@ -53,7 +53,7 @@
             </div>
 
             <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Submit Pertanyaan</button>
+                <button type="submit" class="btn btn-primary">Kirim Pertanyaan</button>
             </div>
         </form>
     </div>

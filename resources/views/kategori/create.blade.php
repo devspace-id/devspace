@@ -3,7 +3,7 @@
 @section('content')
     <div class="card card-primary ml-3 mt-3">
         <div class="card-header">
-            <h3 class="card-title">Input Kategori</h3>
+            <h3 class="card-title">Buat Kategori</h3>
         </div>
 
         <form action="/kategori" method="POST">
@@ -21,7 +21,7 @@
             </div>
 
             <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Buat Kategori</button>
             </div>
         </form>
     </div>
