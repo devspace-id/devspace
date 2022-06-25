@@ -56,7 +56,7 @@
             <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Tivo</a> -->
 
             <!-- Image Logo -->
-            <a class="navbar-brand" href="#"><img src="{{ asset('frontend/images/forumdiskusi.png') }}"
+            <a class="navbar-brand" href="/"><img src="{{ asset('frontend/images/forumdiskusi.png') }}"
                     width="100px" alt="alternative"></a>
 
             <!-- Mobile Menu Toggle Button -->
@@ -70,17 +70,17 @@
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#header">HOME <span class="sr-only">(current)</span></a>
+                        <a class="nav-link page-scroll" href="/">HOME <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#forum">FORUM</a>
+                        <a class="nav-link page-scroll" href="/pertanyaan">FORUM</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#article">ARTICLE</a>
+                        <a class="nav-link page-scroll" href="/artikel">ARTICLE</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#article">CATEGORY</a>
+                        <a class="nav-link page-scroll" href="/kategori">CATEGORY</a>
                     </li>
                 </ul>
                 @auth
@@ -90,10 +90,10 @@
                 @endauth
                 @guest
                     <span class="nav-item">
-                        <a class="btn-outline-sm" href="/loginview">LOG IN</a>
+                        <a class="btn-outline-sm" href="/login">LOG IN</a>
                     </span>
                     <span class="nav-item">
-                        <a class="btn-outline-sm" href="/registerview">REGISTER</a>
+                        <a class="btn-outline-sm" href="/register">REGISTER</a>
                     </span>
                 @endguest
             </div>
@@ -109,8 +109,8 @@
                 <div class="row">
                     <div class="col-lg-6 col-xl-5">
                         <div class="text-container">
-                            <h1>Forum Diskusi</h1>
-                            <p class="p-large">Forum Diskusi Adalah....</p>
+                            <h1>Artikel</h1>
+                            <p class="p-large">Ini adalah kumpulan artikel kami</p>
                         </div> <!-- end of text-container -->
                     </div> <!-- end of col -->
                     <div class="col-lg-6 col-xl-7">
@@ -147,7 +147,6 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h2>Article</h2>
-                    <div class="above-heading">Seluruh Artikel Yang Diinput Admin</div>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
             <div class="row">
