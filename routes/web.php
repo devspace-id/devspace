@@ -15,12 +15,12 @@ Route::get('/', function () {
     return view('layouts.home');
 });
 
-Route::get("/loginview", function(){
-    return view('auth.login');
+Route::get('/loginview', function () {
+    return view('pages.loginview');
 });
 
-Route::get("/register", function(){
-    return view('auth.register');
+Route::get('/registerview', function () {
+    return view('pages.registerview');
 });
 // Route Artikel
 Route::resource('artikel', 'ArtikelController');
