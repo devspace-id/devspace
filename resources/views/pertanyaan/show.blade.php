@@ -1,6 +1,6 @@
-@extends('layout.master')
+@extends('pages.forum')
 
-@section('content')
+@section('pertanyaan')
     @auth
         <a href="/pertanyaan" class="btn btn-primary">Kembali</a>
         <a href="/pertanyaan/{{ $pertanyaan->id }}/edit" class="btn btn-primary">Edit</a>

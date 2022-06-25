@@ -1,6 +1,6 @@
-@extends('layout.master')
+@extends('pages.article')
 
-@section('content')
+@section('artikel')
     <div class="row">
         <div class="col-12">
             <div class="card">

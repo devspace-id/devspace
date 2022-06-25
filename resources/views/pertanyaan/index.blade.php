@@ -1,6 +1,6 @@
-@extends('layout.master')
+@extends('pages.forum')
 
-@section('content')
+@section('pertanyaan')
     <h1 class="text-center">List Pertanyaan</h1>
     <div class="row">
         @forelse ($pertanyaan as $item)
@@ -16,7 +16,7 @@
                 </div>
             </div>
         @empty
-            Tidak ada data
+            Belum ada pertanyaan
         @endforelse
     </div>
 @endsection

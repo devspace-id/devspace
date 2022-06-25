@@ -61,6 +61,7 @@
                     <div class="card-body">
                         {{-- Halaman selatang datang dashboar route /home --}}
                         <h2 class="text-center">Dashboard</h2>
+                        <hr>
                         @yield('content')
                     </div>
                     <!-- /.card-body -->

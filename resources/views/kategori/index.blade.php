@@ -1,6 +1,6 @@
-@extends('layout.master')
+@extends('pages.category')
 
-@section('content')
+@section('kategori')
     <div class="row">
         @forelse ($kategori as $item)
             <div class="col-4">
@@ -18,7 +18,7 @@
                 </div>
             </div>
         @empty
-            Tidak ada data
+            Belum ada Kategori
         @endforelse
     </div>
 @endsection

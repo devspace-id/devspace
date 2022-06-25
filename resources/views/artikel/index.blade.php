@@ -1,6 +1,6 @@
-@extends('layout.master')
+@extends('pages.article')
 
-@section('content')
+@section('artikel')
     <div class="row">
         @forelse ($artikel as $item)
             <div class="col-4">
@@ -26,7 +26,7 @@
                 </div>
             </div>
         @empty
-            Tidak ada data
+            Belum ada Artikel yang dibuat
         @endforelse
     </div>
 @endsection

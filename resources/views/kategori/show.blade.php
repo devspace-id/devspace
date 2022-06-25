@@ -1,6 +1,6 @@
-@extends('layout.master')
+@extends('pages.category')
 
-@section('content')
+@section('kategori')
     <div class="row">
         <div class="col-12">
             <div class="card">
