@@ -70,12 +70,12 @@
 						<a class="nav-link page-scroll" href="#details">FORUM</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link page-scroll" href="#pricing">ARTICLE</a>
+						<a class="nav-link page-scroll" href="#article">ARTICLE</a>
 					</li>
 				</ul>
 				<span class="nav-item">
 					@guest
-					<a class="btn-outline-sm" href="/login">LOG IN</a>
+					<a class="btn-outline-sm" href="/loginview">LOG IN</a>
 						@else
 							@if (auth()->user()->role == 'admin')
 								<a href="/dashboard" class="site-btn header-btn">DASHBOARD</a>

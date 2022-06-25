@@ -15,6 +15,13 @@ Route::get('/', function () {
     return view('layouts.home');
 });
 
+Route::get("/loginview", function(){
+    return view('auth.login');
+});
+
+Route::get("/register", function(){
+    return view('auth.register');
+});
 // Route Artikel
 Route::resource('artikel', 'ArtikelController');
 // Route dengan cara manual
@@ -67,3 +74,5 @@ Route::resource('jawaban', 'JawabanController')->only([
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+
+

@@ -1,119 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+@extends('layouts.app')
 
-<title>Forum Diskusi Tanya Jawab</title>
-    
-<!-- Styles -->
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
-<link href="{{asset('frontend/css/bootstrap.css')}}" rel="stylesheet">
-<link href="{{asset('frontend/css/fontawesome-all.css')}}" rel="stylesheet">
-<link href="{{asset('frontend/css/swiper.css')}}" rel="stylesheet">
-<link href="{{asset('frontend/css/magnific-popup.css')}}" rel="stylesheet">
-<link href="{{asset('frontend/css/styles.css')}}" rel="stylesheet">
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Login') }}</div>
 
-<!-- Favicon  -->
-<link rel="icon" href="{{asset('frontend/images/forumdiskusi.png')}}">
-</head>
-<body data-spy="scroll" data-target=".fixed-top">
+                <div class="card-body">
+                    <form method="POST" action="{{ route('login') }}">
+                        @csrf
 
-<!-- Preloader -->
-<div class="spinner-wrapper">
-    <div class="spinner">
-        <div class="bounce1"></div>
-        <div class="bounce2"></div>
-        <div class="bounce3"></div>
+                        <div class="form-group row">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-6 offset-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+
+                                    <label class="form-check-label" for="remember">
+                                        {{ __('Remember Me') }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-0">
+                            <div class="col-md-8 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Login') }}
+                                </button>
+
+                                @if (Route::has('password.request'))
+                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                        {{ __('Forgot Your Password?') }}
+                                    </a>
+                                @endif
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-<!-- end of preloader -->
-
-
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
-    <div class="container">
-
-        <!-- Text Logo - Use this if you don't have a graphic logo -->
-        <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Tivo</a> -->
-
-        <!-- Image Logo -->
-        <a class="navbar-brand" href="#"><img src="{{asset('frontend/images/forumdiskusi.png')}}"  width="100px" alt="alternative"></a> 
-        
-        <!-- Mobile Menu Toggle Button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-awesome fas fa-bars"></span>
-            <span class="navbar-toggler-awesome fas fa-times"></span>
-        </button>
-        <!-- end of mobile menu toggle button -->
-
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#header">HOME <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#details">FORUM</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#pricing">ARTICLE</a>
-                </li>
-            </ul>
-                <span class="nav-item">
-                    <a class="btn-outline-sm" href="/login">LOG IN</a>
-                </span>
-                <span class="nav-item">
-                    <a class="btn-outline-sm" href="/register">REGISTER</a>
-                </span>
-            </div>
-        </div> <!-- end of container -->
-    </nav> <!-- end of navbar -->
-    <!-- end of navigation -->
-
-
-    <!-- Header -->
-    <header id="header" class="ex-2-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>Log In</h1>
-                   <p>You don't have a password? Then please <a class="white" href="sign-up.html">Sign Up</a></p> 
-                    <!-- Sign Up Form -->
-                    <div class="form-container">
-                        <form id="logInForm" data-toggle="validator" data-focus="false">
-                            <div class="form-group">
-                                <input type="email" class="form-control-input" id="lemail" required>
-                                <label class="label-control" for="lemail">Email</label>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control-input" id="lpassword" required>
-                                <label class="label-control" for="lpassword">Password</label>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                            <div class="form-group">
-                                <button type="submit" class="form-control-submit-button">LOG IN</button>
-                            </div>
-                            <div class="form-message">
-                                <div id="lmsgSubmit" class="h3 text-center hidden"></div>
-                            </div>
-                        </form>
-                    </div> <!-- end of form container -->
-                    <!-- end of sign up form -->
-
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </header> <!-- end of ex-header -->
-    <!-- end of header -->
-
-
-    <!-- Scripts -->
-    <script src="{{asset('frontend/js/jquery.min.js')}}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
-    <script src="{{asset('frontend/js/popper.min.js')}}"></script> <!-- Popper tooltip library for Bootstrap -->
-    <script src="{{asset('frontend/js/bootstrap.min.js')}}"></script> <!-- Bootstrap framework -->
-    <script src="{{asset('frontend/js/jquery.easing.min.js')}}"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
-    <script src="{{asset('frontend/js/swiper.min.js')}}"></script> <!-- Swiper for image and text sliders -->
-    <script src="{{asset('frontend/js/jquery.magnific-popup.js')}}"></script> <!-- Magnific Popup for lightboxes -->
-    <script src="{{asset('frontend/js/validator.min.js')}}"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
-    <script src="{{asset('frontend/js/scripts.js')}}"></script> <!-- Custom scripts -->
-</body>
-</html>
+@endsection
