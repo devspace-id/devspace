@@ -48,20 +48,20 @@
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#header">HOME <span class="sr-only">(current)</span></a>
+                    <a class="nav-link page-scroll" href="/">HOME <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#details">FORUM</a>
+                    <a class="nav-link page-scroll" href="/home">FORUM</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#pricing">ARTICLE</a>
+                    <a class="nav-link page-scroll" href="/artikel">ARTICLE</a>
                 </li>
             </ul>
                 <span class="nav-item">
                     <a class="btn-outline-sm" href="/loginview">LOG IN</a>
                 </span>
                 <span class="nav-item">
-                    <a class="btn-outline-sm" href="/register">REGISTER</a>
+                    <a class="btn-outline-sm" href="/registerview">REGISTER</a>
                 </span>
             </div>
         </div> <!-- end of container -->

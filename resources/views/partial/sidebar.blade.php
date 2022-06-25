@@ -20,7 +20,7 @@
       <!-- SidebarSearch Form -->
       <div class="form-inline">
         <div class="input-group" data-widget="sidebar-search">
-          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+          <input class="form-control form-control-sidebar" type="search" placeholder="Cari Pertanyaan" aria-label="Cari Pertanyaan">
           <div class="input-group-append">
             <button class="btn btn-sidebar">
               <i class="fas fa-search fa-fw"></i>
@@ -58,7 +58,7 @@
             </li>
         </a>
       <li class="nav-item">
-        <a href="#" class="nav-link">
+        <a href="pertanyaan" class="nav-link">
           <i class="far fa-circle nav-icon"></i>
           <p>Pertanyaan</p>
         </a>

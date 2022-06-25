@@ -75,11 +75,12 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1>Log In</h1>
-                   <p>You don't have a password? Then please <a class="white" href="/register">Sign Up</a></p> 
+                   <p>You don't have a password? Then please <a class="white" href="/registerview">Sign Up</a></p> 
                     <!-- Sign Up Form -->
                     <div class="form-container">
-                        <form action="/kategori" method="POST" data-toggle="validator" data-focus="false">
-                            <div class="form-group">
+                        <form action="/home" id="LogInForm" data-toggle="validator" data-focus="false">
+                        @csrf   
+                        <div class="form-group">
                                 <input type="email" class="form-control-input" id="lemail" required>
                                 <label class="label-control" for="lemail">Email</label>
                                 <div class="help-block with-errors"></div>

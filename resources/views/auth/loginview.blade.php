@@ -51,7 +51,7 @@
                     <a class="nav-link page-scroll" href="/">HOME <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="/kategori">FORUM</a>
+                    <a class="nav-link page-scroll" href="/home">FORUM</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="/artikel">ARTICLE</a>
@@ -75,10 +75,10 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1>Log In</h1>
-                   <p>You don't have a password? Then please <a class="white" href="/register">Sign Up</a></p> 
+                   <p>You don't have a password? Then please <a class="white" href="/registerview">Sign Up</a></p> 
                     <!-- Sign Up Form -->
                     <div class="form-container">
-                        <form action="/home" method="POST" data-toggle="validator" data-focus="false">
+                        <form action="/home" id="LogInForm" data-toggle="validator" data-focus="false">
                         @csrf
                             <div class="form-group">
                                 <input type="email" class="form-control-input" id="lemail" required>

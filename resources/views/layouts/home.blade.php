@@ -67,7 +67,7 @@
 						<a class="nav-link page-scroll" href="/">HOME <span class="sr-only">(current)</span></a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link page-scroll" href="/kategori">FORUM</a>
+						<a class="nav-link page-scroll" href="/home">FORUM</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link page-scroll" href="/artikel/">ARTICLE</a>

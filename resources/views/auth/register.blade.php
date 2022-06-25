@@ -75,7 +75,7 @@
                                 <div class="col-md-6">
                                     <input type="text" class="form-control @error('biodata') is-invalid @enderror"
                                         name="biodata" value="{{ old('biodata') }}">
-                                    @error('Username')
+                                    @error('Biodata')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
