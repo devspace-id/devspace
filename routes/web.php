@@ -22,6 +22,18 @@ Route::get('/loginview', function () {
 Route::get('/registerview', function () {
     return view('pages.registerview');
 });
+
+Route::get('/category', function () {
+    return view('pages.category');
+});
+
+Route::get('/article', function () {
+    return view('pages.article');
+});
+
+Route::get('/forum', function () {
+    return view('pages.forum');
+});
 // Route Artikel
 Route::resource('artikel', 'ArtikelController');
 // Route dengan cara manual
