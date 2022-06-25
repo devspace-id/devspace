@@ -106,11 +106,6 @@
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control-input" id="spassword" required>
-                                <label class="label-control" for="spassword">Username</label>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control-input" id="spassword" required>
                                 <label class="label-control" for="spassword">Biodata</label>
                                 <div class="help-block with-errors"></div>
                             </div>

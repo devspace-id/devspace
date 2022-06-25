@@ -64,13 +64,17 @@
 			<div class="collapse navbar-collapse" id="navbarsExampleDefault">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item">
-						<a class="nav-link page-scroll" href="#header">HOME <span class="sr-only">(current)</span></a>
+						<a class="nav-link page-scroll" href="/">HOME <span class="sr-only">(current)</span></a>
 					</li>
 					<li class="nav-item">
+<<<<<<< HEAD
 						<a class="nav-link page-scroll" href="#forum">FORUM</a>
+=======
+						<a class="nav-link page-scroll" href="/kategori">FORUM</a>
+>>>>>>> e10a1dfb6b3d87c625413c1f5e63644468e82fc2
 					</li>
 					<li class="nav-item">
-						<a class="nav-link page-scroll" href="#article">ARTICLE</a>
+						<a class="nav-link page-scroll" href="/artikel/">ARTICLE</a>
 					</li>
                     <li class="nav-item">
 						<a class="nav-link page-scroll" href="#article">CATEGORY</a>
@@ -82,9 +86,9 @@
 		
 				</span>
 				<span class="nav-item">
-                    @guest
-					<a class="btn-outline-sm" href="/register">REGISTER</a>
-                    @endguest
+
+					<a class="btn-outline-sm" href="/registerview">REGISTER</a>
+
 				</span>
 			</div>
 		</div> <!-- end of container -->

@@ -48,13 +48,13 @@
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#header">HOME <span class="sr-only">(current)</span></a>
+                    <a class="nav-link page-scroll" href="/">HOME <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#details">FORUM</a>
+                    <a class="nav-link page-scroll" href="/kategori">FORUM</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#pricing">ARTICLE</a>
+                    <a class="nav-link page-scroll" href="/artikel">ARTICLE</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="#article">CATEGORY</a>
@@ -64,7 +64,7 @@
                     <a class="btn-outline-sm" href="/loginview">LOG IN</a>
                 </span>
                 <span class="nav-item">
-                    <a class="btn-outline-sm" href="/register">REGISTER</a>
+                    <a class="btn-outline-sm" href="/registerview">REGISTER</a>
                 </span>
             </div>
         </div> <!-- end of container -->
@@ -81,7 +81,7 @@
                    <p>You don't have a password? Then please <a class="white" href="/register">Sign Up</a></p> 
                     <!-- Sign Up Form -->
                     <div class="form-container">
-                        <form id="logInForm" data-toggle="validator" data-focus="false">
+                        <form action="/kategori" method="POST" data-toggle="validator" data-focus="false">
                             <div class="form-group">
                                 <input type="email" class="form-control-input" id="lemail" required>
                                 <label class="label-control" for="lemail">Email</label>
