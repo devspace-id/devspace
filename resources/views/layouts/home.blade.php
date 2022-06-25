@@ -89,7 +89,9 @@
 						@endguest
 				</span>
 				<span class="nav-item">
+                    @guest
 					<a class="btn-outline-sm" href="/register">REGISTER</a>
+                    @endguest
 				</span>
 			</div>
 		</div> <!-- end of container -->
