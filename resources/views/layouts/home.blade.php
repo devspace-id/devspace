@@ -67,10 +67,13 @@
 						<a class="nav-link page-scroll" href="#header">HOME <span class="sr-only">(current)</span></a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link page-scroll" href="#details">FORUM</a>
+						<a class="nav-link page-scroll" href="#forum">FORUM</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link page-scroll" href="#article">ARTICLE</a>
+					</li>
+                    <li class="nav-item">
+						<a class="nav-link page-scroll" href="#article">CATEGORY</a>
 					</li>
 				</ul>
 				<span class="nav-item">
@@ -119,8 +122,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="above-heading">Article</div>
-                    <h2 class="h2-heading">Seluruh Artikel Yang Diinput Admin</h2>
+                    <h2>Article</h2>
+                    <div class="above-heading">Seluruh Artikel Yang Diinput Admin</div>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
             <div class="row">
@@ -150,6 +153,7 @@
                     </div>
                     <!-- end of card -->
 
+
                     <!-- Card -->
                     <div class="card">
                         <div class="card-image">
@@ -168,6 +172,21 @@
     </div> <!-- end of cards-1 -->
     <!-- end of article -->
 
+     <!-- Category -->
+     <div class="cards-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Category</h2>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <button type="button" class="btn btn-primary btn-lg">Laravel</button>
+            <button type="button" class="btn btn-primary btn-lg">React JS</button>
+            <button type="button" class="btn btn-primary btn-lg">Code Igner</button>
+            <button type="button" class="btn btn-primary btn-lg">React Native</button>
+        </div> <!-- end of container -->
+    <!-- end of category -->
+
 
     
     <!-- Start Forum -->
@@ -175,8 +194,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="above-heading">Forum Diskusi</div>
-                       </div> <!-- end of col -->
+                    <h2>Forum</h2>
+                </div> <!-- end of col -->
             </div> <!-- end of row -->
             <div class="row">
                 <div class="col-lg-12">
@@ -185,7 +204,7 @@
                     <div class="tab-content" id="argoTabsContent">
 
                         <!-- Tab -->
-                        <div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="tab-1">
+                        <div class="tab-pane fade show active mt-3" id="tab-1" role="tabpanel" aria-labelledby="tab-1">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="text-container">
@@ -193,15 +212,7 @@
                                         <p>Pertanyaan<ul class="list-unstyled li-space-lg">
                                             <li class="media">
                                                 <i class="fas fa-square"></i>
-                                                <div class="media-body">Create and embed on websites newsletter sign up forms</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-square"></i>
-                                                <div class="media-body">Manage forms and landing pages for your services</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-square"></i>
-                                                <div class="media-body">Add and remove subscribers using the control panel</div>
+                                                <div class="media-body">kategori</div>
                                             </li>
                                         </ul>
                                         <a class="btn-solid-reg popup-with-move-anim" href="#details-lightbox-1">Jawaban</a>
@@ -214,8 +225,10 @@
 
 
     <!-- Description -->
-    <div class="container">
-        <div class="row">
+    
+    <div class="container mt-3">
+        <h2>Description</h2>
+        <div class="row mt-3">
             <div class="col-lg-12">
 	<div class="p-heading mt-10">Forum Diskusi Dibuat Untuk Memenuhi Final Project Akhir</div>        
             </div>
@@ -226,6 +239,7 @@
 	{{-- Team --}}
     <div class="slider-2">
         <div class="container">
+            <h2>Teams</h2>
             <div class="row">
                 <div class="col-lg-12">      
                     

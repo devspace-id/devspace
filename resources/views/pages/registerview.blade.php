@@ -56,6 +56,9 @@
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="#pricing">ARTICLE</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#article">CATEGORY</a>
+                </li>
             </ul>
                 <span class="nav-item">
                     <a class="btn-outline-sm" href="/loginview">LOG IN</a>
