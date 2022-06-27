@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Jawaban;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class JawabanController extends Controller
 {
@@ -22,6 +23,7 @@ class JawabanController extends Controller
             'isi' => $request->isi,
         ]);
 
+        Alert::success('Berhasil', 'Jawabanmu berhasil ditambahkan');
         return redirect()->back();
     }
 }

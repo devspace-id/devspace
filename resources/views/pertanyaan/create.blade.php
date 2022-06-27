@@ -53,7 +53,7 @@
             </div>
 
             <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Kirim Pertanyaan</button>
+                <button type="submit" class="btn btn-primary">Buat Pertanyaan</button>
             </div>
         </form>
     </div>

@@ -84,5 +84,11 @@ Route::resource('jawaban', 'JawabanController')->only([
     'store'
 ])->middleware('auth');
 
+Route::get('/download', function () {
+    $pdf = App::make('dompdf.wrapper');
+    $pdf->loadHTML('<h1>Belajar Laravel EBook</h1>');
+    return $pdf->stream();
+});
+
 Auth::routes();
 Route::get('/dashboard', 'HomeController@index')->name('dashboard');

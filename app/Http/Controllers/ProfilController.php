@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Profil;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ProfilController extends Controller
 {
@@ -31,6 +32,7 @@ class ProfilController extends Controller
             'alamat' => $request->alamat,
         ]);
 
-        return redirect("/")->with('success', 'Profil berhasil diubah');
+        Alert::info('Berhasil', 'Profil berhasil diubah');
+        return redirect("/");
     }
 }

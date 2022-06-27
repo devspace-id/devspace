@@ -7,6 +7,7 @@ use App\Artikel;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ArtikelController extends Controller
 {
@@ -64,7 +65,8 @@ class ArtikelController extends Controller
             'users_id' => $idUser,
         ]);
 
-        return redirect("/artikel")->with('success', 'Data berhasil ditambahkan');
+        Alert::success('Berhasil', 'Artikel berhasil ditambahkan');
+        return redirect("/artikel");
     }
 
     /**
@@ -129,7 +131,8 @@ class ArtikelController extends Controller
             ]);
         }
 
-        return redirect("/artikel")->with('success', 'Data berhasil diubah');
+        Alert::success('Berhasil', 'Artikel berhasil diubah');
+        return redirect("/artikel");
     }
 
     /**
@@ -144,6 +147,8 @@ class ArtikelController extends Controller
         $path = "gambar/";
         File::delete($path . $artikel->gambar);
         Artikel::destroy($id);
-        return redirect("/artikel")->with('success', 'Data berhasil dihapus');
+
+        Alert::info('Berhasil', 'Artikel berhasil dihapus');
+        return redirect("/artikel");
     }
 }

@@ -1,20 +1,7 @@
 @extends('pages.forum')
 
 @section('pertanyaan')
-    @auth
-        <a href="/pertanyaan" class="btn btn-primary">Kembali</a>
-        <a href="/pertanyaan/{{ $pertanyaan->id }}/edit" class="btn btn-primary">Edit</a>
-        <form action="/pertanyaan/{{ $pertanyaan->id }}" method="POST">
-            @csrf
-            @method('DELETE')
-            <input type="submit" value="delete" class="btn btn-danger btn-sm m-1">
-        </form>
-    @endauth
-    @guest
-        <a href="/pertanyaan" class="btn btn-primary">Kembali</a>
-    @endguest
     <div class="row">
-
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
@@ -24,12 +11,24 @@
                     <em>Kategori: {{ $pertanyaan->kategori->nama_kategori }}</em>
                     <hr>
                     <p class="card-text">{{ $pertanyaan->isi }}</p>
-                    <h4>Lampiran Gambar Error</h4>
-                    <img class="card-img-top" src="{{ asset('/gambar/' . $pertanyaan->gambar) }}" height="400px"
-                        alt="Card image cap">
+                    <img class="card-img-top" src="{{ asset('/gambar/' . $pertanyaan->gambar) }}" alt="Card image cap">
                 </div>
             </div>
         </div>
+        @auth
+            <div class="d-flex flex-row mt-2 ml-3">
+                <a href="/pertanyaan" class="btn btn-primary text-decoration-none">Kembali</a>
+                <a href="/pertanyaan/{{ $pertanyaan->id }}/edit" class="btn btn-primary text-decoration-none ml-1">Edit</a>
+                <form action="/pertanyaan/{{ $pertanyaan->id }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <input type="submit" value="delete" class="btn btn-danger text-decoration-none ml-1">
+                </form>
+            </div>
+        @endauth
+        @guest
+            <a href="/pertanyaan" class="btn btn-primary ml-1 text-decoration-none">Kembali</a>
+        @endguest
     </div>
 
     {{-- tempat memberi jawaban pertanyaan --}}
@@ -63,6 +62,6 @@
             </div>
         </div>
     @empty
-        <h4>Tidak ada jawaban</h4>
+        <h4>Belum ada jawaban</h4>
     @endforelse
 @endsection

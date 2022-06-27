@@ -56,7 +56,7 @@
                         <a class="nav-link page-scroll" href="/">HOME <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="/kategori">FORUM</a>
+                        <a class="nav-link page-scroll" href="/pertanyaan">FORUM</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link page-scroll" href="/artikel">ARTICLE</a>
@@ -90,6 +90,7 @@
     <script src="{{ asset('frontend/js/jquery.magnific-popup.js') }}"></script> <!-- Magnific Popup for lightboxes -->
     <script src="{{ asset('frontend/js/validator.min.js') }}"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
     <script src="{{ asset('frontend/js/scripts.js') }}"></script> <!-- Custom scripts -->
+    @include('sweetalert::alert')
 </body>
 
 </html>

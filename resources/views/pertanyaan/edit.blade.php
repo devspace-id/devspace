@@ -3,7 +3,7 @@
 @section('content')
     <div class="card card-primary ml-3 mt-3">
         <div class="card-header">
-            <h3 class="card-title">Edit</h3>
+            <h3 class="card-title">Ubah Pertanyaan</h3>
         </div>
 
         <form action="/pertanyaan/{{ $pertanyaan->id }}" method="POST" enctype="multipart/form-data">
@@ -21,10 +21,9 @@
 
                 <div class="form-group">
                     <label for="isi">Isi</label>
-                    <input type="text" name="isi" class="form-control" id="isi"
-                        value="{{ old('isi', $pertanyaan->isi) }}">
+                    <textarea name="isi" class="form-control" id="isi" value="{{ old('isi', $pertanyaan->isi) }}"></textarea>
                     @error('isi')
-                        <div class="alert alert-danger">{{ $message }}</divbaz>
+                        <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
 
@@ -59,7 +58,7 @@
             </div>
 
             <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Edit</button>
+                <button type="submit" class="btn btn-primary">Edit Pertanyaan</button>
             </div>
         </form>
     </div>

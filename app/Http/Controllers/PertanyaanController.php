@@ -8,6 +8,7 @@ use App\Kategori;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class PertanyaanController extends Controller
 {
@@ -68,7 +69,8 @@ class PertanyaanController extends Controller
             'users_id' => $idUser,
         ]);
 
-        return redirect("/pertanyaan")->with('success', 'Data berhasil ditambahkan');
+        Alert::success('Berhasil', 'Pertanyaan berhasil ditambahkan');
+        return redirect("/pertanyaan");
     }
 
     /**
@@ -137,7 +139,8 @@ class PertanyaanController extends Controller
             ]);
         }
 
-        return redirect("/pertanyaan")->with('success', 'Data berhasil diubah');
+        Alert::success('Berhasil', 'Pertanyaan berhasil diubah');
+        return redirect("/pertanyaan");
     }
 
     /**
@@ -152,6 +155,8 @@ class PertanyaanController extends Controller
         $path = "gambar/";
         File::delete($path . $pertanyaan->gambar);
         Pertanyaan::destroy($id);
-        return redirect("/pertanyaan")->with('success', 'Data berhasil dihapus');
+
+        Alert::info('Berhasil', 'Pertanyaan berhasil dihapus');
+        return redirect("/pertanyaan");
     }
 }

@@ -9,6 +9,7 @@ use App\Profil;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class RegisterController extends Controller
 {
@@ -30,7 +31,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -81,6 +82,7 @@ class RegisterController extends Controller
             'users_id' => $user->id,
         ]);
 
+        Alert::success('Selamat!', 'Anda berhasil terdaftar');
         return $user;
     }
 }

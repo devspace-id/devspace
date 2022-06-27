@@ -38,18 +38,18 @@
 <body data-spy="scroll" data-target=".fixed-top">
 
     <!-- Preloader -->
-    {{-- <div class="spinner-wrapper">
+    <div class="spinner-wrapper">
         <div class="spinner">
             <div class="bounce1"></div>
             <div class="bounce2"></div>
             <div class="bounce3"></div>
         </div>
-    </div> --}}
+    </div>
     <!-- end of preloader -->
 
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
         <div class="container">
 
             <!-- Text Logo - Use this if you don't have a graphic logo -->
@@ -143,33 +143,41 @@
     <!-- Start Forum -->
     <div id="features" class="tabs">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2>Forum</h2>
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-            <div class="row">
-                <div class="col-lg-12">
-
-                    <!-- Tabs Content -->
-                    <div class="tab-content" id="argoTabsContent">
-
-                        <!-- Tab -->
-                        <div class="tab-pane fade show active mt-3" id="tab-1" role="tabpanel"
-                            aria-labelledby="tab-1">
-                            <div class="row">
+            <h2 class="mb-5 title text-center">Forum Diskusi</h2>
 
 
-                                <div>
-                                    @yield('pertanyaan')
-                                </div>
-                                {{-- <a class="btn-solid-reg popup-with-move-anim" href="#">Jawaban</a> --}}
+            <!-- Tabs Content -->
+            <div class="tab-content" id="argoTabsContent">
+
+                <!-- Tab -->
+                <div class="tab-pane fade show active mt-3" id="tab-1" role="tabpanel" aria-labelledby="tab-1">
+                    <div class="row">
+                        <div class="col">
 
 
-                            </div> <!-- end of row -->
-                        </div> <!-- end of tab-pane -->
-                        <!-- end of tab -->
-                        {{-- End Forum --}}
+                            <div>
+                                @yield('pertanyaan')
+                            </div>
+                            {{-- <a class="btn-solid-reg popup-with-move-anim" href="#">Jawaban</a> --}}
+
+
+                        </div> <!-- end of row -->
+                    </div> <!-- end of tab-pane -->
+                    <!-- end of tab -->
+                    {{-- End Forum --}}
+                    <script src="{{ asset('frontend/js/jquery.min.js') }}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+                    <script src="{{ asset('frontend/js/popper.min.js') }}"></script> <!-- Popper tooltip library for Bootstrap -->
+                    <script src="{{ asset('frontend/js/bootstrap.min.js') }}"></script> <!-- Bootstrap framework -->
+                    <script src="{{ asset('frontend/js/jquery.easing.min.js') }}"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+                    <script src="{{ asset('frontend/js/swiper.min.js') }}"></script> <!-- Swiper for image and text sliders -->
+                    <script src="{{ asset('frontend/js/jquery.magnific-popup.js') }}"></script> <!-- Magnific Popup for lightboxes -->
+                    <script src="{{ asset('frontend/js/validator.min.js') }}"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
+                    <script src="{{ asset('frontend/js/scripts.js') }}"></script> <!-- Custom scripts -->
+                    @include('sweetalert::alert')
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
