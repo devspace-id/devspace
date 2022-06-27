@@ -18,4 +18,4 @@
 
 ### Link Demo Aplikasi : https://youtu.be/LEC-I8vdvrU
 
-### Link Deplot : https://devspace.id
+### Link Deploy : https://devspace.id
